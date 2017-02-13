@@ -1,8 +1,4 @@
-class ProductFactory:
-
-    @classmethod
-    def create(self, content):
-        pass
+from factories import ProductFactory
 
 
 class SaveProductInfoUseCase:
