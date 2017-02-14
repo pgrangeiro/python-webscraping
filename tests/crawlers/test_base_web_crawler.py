@@ -19,7 +19,7 @@ class TestBrandsWebCrawler:
     def teardown_method(self, test_method):
         self.patcher.stop()
 
-    def test_execute_retuns_crawled_brands(self):
+    def test_execute_retuns_crawled_objs(self):
         self.crawler.parser.parse.return_value = [1, 2]
         response = Mock(status_code=200)
         self.requests.get.return_value = response
