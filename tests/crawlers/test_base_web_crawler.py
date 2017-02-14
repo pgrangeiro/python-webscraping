@@ -9,7 +9,7 @@ from exceptions import BadRequestException
 class TestBrandsWebCrawler:
 
     def setup_method(self, test_method):
-        self.patcher = patch('crawlers.base.requests', spec=True)
+        self.patcher = patch('crawlers.base_crawler.requests', spec=True)
         self.requests = self.patcher.start()
 
         stub_class = type('Stub', (BaseWebCrawler, ), {})
