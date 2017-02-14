@@ -1,18 +1,8 @@
-import requests
-
-from exceptions import BadRequestException
+from crawlers import BaseWebCrawler
 from parsers import BrandsParser
 
 
-class BrandsWebCrawler:
+class BrandsWebCrawler(BaseWebCrawler):
 
     url = 'http://www.epocacosmeticos.com.br/marcas'
-
-    @classmethod
-    def execute(cls):
-        response = requests.get(cls.url)
-
-        if response.status_code != requests.codes.ok:
-            raise BadRequestException
-
-        return BrandsParser.parse(response.content)
+    parser = BrandsParser
