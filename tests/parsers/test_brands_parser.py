@@ -4,14 +4,13 @@ import vcr
 
 from exceptions import UnexpectedContentToParseException
 from parsers import BrandsParser
-from settings import BASE_URL
 
 
 class TestBrandsParser:
 
     @vcr.use_cassette('tests/fixtures/vcr/brands.yaml')
     def test_parse_content_returns_brands_info(self):
-        response = requests.get(BASE_URL)
+        response = requests.get('http://www.epocacosmeticos.com.br/marcas')
         brands = list(BrandsParser.parse(response.content))
 
         assert 404 == len(brands)

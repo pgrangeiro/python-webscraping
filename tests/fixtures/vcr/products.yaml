@@ -1,0 +1,81 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.13.0]
+    method: GET
+    uri: http://www.epocacosmeticos.com.br/buscapagina?fq=B%3a2000435&PS=50&sl=3d564047-8ff1-4aa8-bacd-f11730c3fce6&cc=4&sm=0&PageNumber=1
+  response:
+    body:
+      string: !!binary |
+        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
+        Ztf0Y94uyqP/B8p9OnpRLwAA
+    headers:
+      Cache-Control: [private]
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['2298']
+      Content-Type: [text/html; charset=utf-8]
+      Date: ['Tue, 14 Feb 2017 03:25:34 GMT']
+      ETag: ['"835A2952E4D38AE1AF417A4E8E50F2A1"']
+      Server: [nginx]
+      Set-Cookie: ['janus_sid=e0d1e2d7-1198-4794-bd27-8c0312f2bc01; expires=Fri, 17
+          Feb 2017 03:25:11 GMT; domain=www.epocacosmeticos.com.br; path=/']
+      Vary: [Accept-Encoding]
+      X-CacheServer: [janus-apicache-nginx16]
+      X-Powered-by-VTEX-Janus-ApiCache: [v1.3.9]
+      X-Powered-by-VTEX-Janus-Edge: [v1.35.3]
+      X-Track: [stable]
+      X-VTEX-Cache-Status-Janus-ApiCache: [MISS]
+      X-VTEX-Cache-Status-Janus-Edge: [MISS]
+      X-VTEX-Janus-Router-Backend-App: [portal-v1.4.690-stable+1206]
+      X-vtex-processado-em: [': 00:00:00.1130135-c1:120']
+      X-vtex-processed-at: ['14/02/2017 03:25:32']
+      X-vtex-remote-cache: ['true']
+      'no': [-DINS692KJ1P]
+      p3p: ['policyref="/w3c/p3p.xml",CP="ADMa OUR NOR CNT NID DSP NOI COR"']
+      powered: [vtex]
+    status: {code: 200, message: OK}
+version: 1
