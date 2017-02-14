@@ -21,4 +21,4 @@ class TestProduct:
         instance = Product('name', 'title', 'url')
         instance.save()
 
-        self.service.write.assert_called_once_with(name='name', title='title', url='url')
+        self.service.write.assert_called_once_with('name', 'title', 'url')

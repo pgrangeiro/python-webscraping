@@ -9,4 +9,4 @@ class Product:
         self.url = url
 
     def save(self):
-        CSVService.write(name=self.name, title=self.title, url=self.url)
+        CSVService.write(self.name, self.title, self.url)
