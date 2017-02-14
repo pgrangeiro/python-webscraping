@@ -1,11 +1,9 @@
-
 import pytest
 import requests
 import vcr
 
 from exceptions import UnexpectedContentToParseException
 from parsers import BrandInfoParser
-from settings import BASE_URL
 
 
 class TestBrandInfoParser:
