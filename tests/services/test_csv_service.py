@@ -17,6 +17,6 @@ class TestCSVService:
         with patch('services.csv_service.open', self.mopen):
             CSVService.write('name', 'title', 'url')
 
-            self.mopen.assert_called_once_with('output.csv', 'w', newline='')
+            self.mopen.assert_called_once_with('output.csv', 'a', newline='')
             self.mcsv.writer.assert_called_once_with(self.mopen())
             self.mcsv.writer().writerow.assert_called_once_with(('name', 'title', 'url'))
