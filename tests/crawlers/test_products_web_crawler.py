@@ -20,6 +20,13 @@ class TestProductsWebCrawler:
         assert ProductsParser == crawler.parser
         assert isinstance(crawler, BaseWebCrawler)
 
+    def test_next_page_changes_current_page_attr(self):
+        crawler = ProductsWebCrawler('url')
+        assert 1 == crawler.current_page
+
+        crawler.next_page()
+        assert 2 == crawler.current_page
+
     def test_execute_change_page_when_crawled_all_products_from_current_page(self):
         crawler = ProductsWebCrawler('url')
         crawler.parser = Mock(crawler.parser)

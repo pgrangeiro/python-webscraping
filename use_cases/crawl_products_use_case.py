@@ -17,6 +17,7 @@ class CrawlProductsUseCase:
                 try:
                     product_info = products_info_crawler.execute()
                     yield (
+                        product['id'],
                         product_info['name'],
                         product_info['title'],
                         product['url'],

@@ -18,11 +18,11 @@ class ProductsWebCrawler(BaseWebCrawler):
         return '%s%s' % (self.base_url, self.current_page)
 
     def execute(self):
-        products = super(ProductsWebCrawler, self).execute()
+        products = list(super(ProductsWebCrawler, self).execute())
 
         while products:
             for product in products:
                 yield product
             self.next_page()
-            products = super(ProductsWebCrawler, self).execute()
+            products = list(super(ProductsWebCrawler, self).execute())
 

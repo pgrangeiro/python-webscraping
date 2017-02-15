@@ -20,7 +20,7 @@ class TestCrawlProductsUseCase:
     def test_execute_calls_crawlers_correctly(self):
         self.brands_crawler().execute.return_value = [{'url': 'brand_url'}]
         self.brand_info_crawler().execute.return_value = {'id': 1}
-        self.products_crawler().execute.return_value = [{'url': 'product_url'}]
+        self.products_crawler().execute.return_value = [{'id': 1, 'url': 'product_url'}]
         self.product_info_crawler().execute.return_value = {'name': 'Name', 'title': 'Title'}
 
         args = list(CrawlProductsUseCase.execute())
@@ -28,4 +28,4 @@ class TestCrawlProductsUseCase:
         self.brand_info_crawler.assert_called_with('brand_url')
         self.products_crawler.assert_called_with(1)
         self.product_info_crawler.assert_called_with('product_url')
-        assert [('Name', 'Title', 'product_url')] ==  args
+        assert [(1, 'Name', 'Title', 'product_url')] == args
