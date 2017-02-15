@@ -16,4 +16,4 @@ class ProductInfoParser:
                 'title': element.text,
             }
         except AttributeError:
-            raise UnexpectedContentToParseException
+            raise UnexpectedContentToParseException('Product Info Not Found - %s' % element)

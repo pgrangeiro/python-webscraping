@@ -16,4 +16,4 @@ class BrandInfoParser:
                 'id': wrapper[wrapper.find('brandId:'):-6].replace('brandId:', '')
             }
         except AttributeError:
-            raise UnexpectedContentToParseException
+            raise UnexpectedContentToParseException('Brand Info Not Found - %s' % wrapper)

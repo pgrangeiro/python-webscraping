@@ -17,4 +17,4 @@ class BrandsParser:
                     'url': element.attrs['href'],
                 }
         except AttributeError:
-            raise UnexpectedContentToParseException
+            raise UnexpectedContentToParseException('Brand Not Found - %s' % wrapper)

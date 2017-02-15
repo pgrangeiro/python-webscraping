@@ -3,7 +3,7 @@ import pytest
 from unittest.mock import Mock, patch
 
 from crawlers import BaseWebCrawler
-from exceptions import BadRequestException
+from exceptions import BadRequestException, UnexpectedContentToParseException
 
 
 class TestBrandsWebCrawler:
@@ -34,4 +34,14 @@ class TestBrandsWebCrawler:
         self.requests.get.return_value = Mock(status_code=404)
 
         with pytest.raises(BadRequestException):
+            self.crawler.execute()
+
+    def test_execute_raises_unexpected_exception_when_parser_raises_exception(self):
+        self.crawler.parser.parse.return_value = [1, 2]
+        response = Mock(status_code=200)
+        self.requests.get.return_value = response
+        self.requests.codes.ok = 200
+        self.crawler.parser.parse.side_effect = UnexpectedContentToParseException
+
+        with pytest.raises(UnexpectedContentToParseException):
             self.crawler.execute()

@@ -1,7 +1,7 @@
 from abc import ABCMeta
 import requests
 
-from exceptions import BadRequestException
+from exceptions import BadRequestException, UnexpectedContentToParseException
 
 
 class BaseWebCrawler:
@@ -15,6 +15,9 @@ class BaseWebCrawler:
         response = requests.get(self.url)
 
         if response.status_code != requests.codes.ok:
-            raise BadRequestException
+            raise BadRequestException('Unavailable url - %s' % self.url)
 
-        return self.parser.parse(response.content)
+        try:
+            return self.parser.parse(response.content)
+        except UnexpectedContentToParseException as e:
+            raise UnexpectedContentToParseException('%s - %s' % (e.message, self.url))
