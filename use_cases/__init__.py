@@ -1,2 +1,3 @@
 from .crawl_products_use_case import CrawlProductsUseCase
+from .get_products_from_site_use_case import GetProductsFromSiteUseCase
 from .save_product_info_use_case import SaveProductInfoUseCase

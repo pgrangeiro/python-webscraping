@@ -1,11 +1,8 @@
-from use_cases import CrawlProductsUseCase, SaveProductInfoUseCase
+from use_cases import GetProductsFromSiteUseCase
 
 
 def run():
-    products_ids = []
-    for id, name, title, url in CrawlProductsUseCase.execute():
-        if id not in products_ids:
-            SaveProductInfoUseCase.execute(name, title, url)
+    GetProductsFromSiteUseCase.execute()
 
 
 if __name__ == '__main__':
