@@ -1,3 +1,5 @@
+import pytest
+
 from unittest.mock import patch
 
 from use_cases import CrawlProductsUseCase
@@ -29,3 +31,4 @@ class TestCrawlProductsUseCase:
         self.products_crawler.assert_called_with(1)
         self.product_info_crawler.assert_called_with('product_url')
         assert [(1, 'Name', 'Title', 'product_url')] == args
+
